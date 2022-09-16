@@ -6,9 +6,9 @@ namespace TweetApp.MessegeSender
     {
         async public void Publish(string message)
         {
-            var conStr = "Endpoint=sb://tweetappservicebusmap.servicebus.windows.net/;SharedAccessKeyName=policytweetapp;SharedAccessKey=xZFx45+90bkU89ZLVxlztQvhpqn432zHggkvCkfDPvk=;EntityPath=tweetapptopic";
+            var conStr = "Your con string";
             var client = new ServiceBusClient(conStr);
-            var sender = client.CreateSender("tweetappTopic");
+            var sender = client.CreateSender("Your topic name");
             var Message = new ServiceBusMessage(message);
             await sender.SendMessageAsync(Message);
 
